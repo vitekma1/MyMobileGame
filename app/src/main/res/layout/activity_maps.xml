@@ -22,7 +22,7 @@
         android:id="@+id/btn_pedo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Pedometer" />
     <TextView
         android:id="@+id/tv_steps"
         android:layout_width="match_parent"

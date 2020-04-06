@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 startActivity(new Intent(MainActivity.this, PedometerActivity.class));
             }
         });
+
+
     }
 
     @Override
