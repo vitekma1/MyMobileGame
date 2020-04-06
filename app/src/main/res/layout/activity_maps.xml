@@ -13,7 +13,7 @@
 
     <Button
         android:id="@+id/btnGetDirection"
-        android:text="Get Direction"
+        android:text="Zobrazit trasu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground" />
@@ -22,7 +22,7 @@
         android:id="@+id/btn_pedo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pedometer" />
+        android:text="Krokoměr" />
     <TextView
         android:id="@+id/tv_steps"
         android:layout_width="match_parent"

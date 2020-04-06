@@ -36,6 +36,14 @@ private int numStepsTotal;
                 startActivity(new Intent(Storage.this, PedometerActivity.class));
             }
         });
+        Button btn_temp = (Button)findViewById(R.id.btn_temp);
+
+        btn_temp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Storage.this, Temperature.class));
+            }
+        });
 
     }
 

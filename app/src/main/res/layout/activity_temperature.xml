@@ -6,38 +6,15 @@
     android:layout_height="match_parent">
 
 
-
     <TextView
-        android:id="@+id/tv_steps"
+        android:id="@+id/temp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         />
-
-
-    <Button
-        android:id="@+id/btn_start"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Spustit krokoměr"
-        />
-
-    <Button
-        android:id="@+id/btn_stop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="zastavit krokoměr"
-        />
-
-    <Button
-        android:id="@+id/btn_map"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Mapa" />
     <Button
         android:id="@+id/btn_storage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Statistiky" />
-
 </LinearLayout>
