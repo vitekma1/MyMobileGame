@@ -17,4 +17,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Statistiky" />
+    <Button
+        android:id="@+id/btn_quests"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Úkoly" />
 </LinearLayout>

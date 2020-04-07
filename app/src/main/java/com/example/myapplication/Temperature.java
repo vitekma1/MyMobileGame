@@ -46,6 +46,14 @@ public class Temperature extends AppCompatActivity implements SensorEventListene
                 startActivity(new Intent(Temperature.this, Storage.class));
             }
         });
+        Button btn_quests = (Button)findViewById(R.id.btn_quests);
+
+        btn_quests.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Temperature.this, Quests.class));
+            }
+        });
 
     }
 

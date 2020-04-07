@@ -26,6 +26,7 @@ private int numStepsTotal;
         editor.commit();
         numStepsTotal = settings.getInt("numStepsTotal",numStepsTotal);
         String numStepsTotalStr = String.valueOf(numStepsTotal);
+        String totalMeters = String.valueOf(numStepsTotal*0.762);
         Tsteps = (TextView) findViewById(R.id.total_steps);
         Tsteps.setText(numStepsTotalStr);
         Button btn_pedo = (Button)findViewById(R.id.btn_pedo);
