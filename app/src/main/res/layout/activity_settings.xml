@@ -6,32 +6,53 @@
     android:orientation="vertical"
     android:background="@drawable/quests_background">
 
+    <TextView
+        android:id="@+id/vyskaTxt"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#85000000"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:text="Nastavení výšky uživatele"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/btn_step_size_big"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:text="více než 185"
+         />
+    <Button
+        android:id="@+id/btn_step_size_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:text="mezi 165 a 185"
+         />
+    <Button
+        android:id="@+id/btn_step_size_small"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:text="méně než 165" />
 
     <TextView
-        android:id="@+id/total_steps"
+        android:id="@+id/vyska"
         android:layout_width="match_parent"
-        android:layout_height="286dp"
+        android:layout_height="60dp"
         android:background="#85000000"
         android:gravity="center"
         android:shadowColor="#000000"
         android:shadowDx="2"
         android:shadowDy="2"
         android:shadowRadius="2"
-        android:textColor="#00FF19"
-        android:textSize="26sp"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/total_calories"
-        android:layout_width="match_parent"
-        android:layout_height="286dp"
-        android:background="#85000000"
-        android:gravity="center"
-        android:shadowColor="#000000"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:shadowRadius="2"
-        android:textColor="#00FF19"
-        android:textSize="26sp"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
 
@@ -42,6 +63,7 @@
         android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
         android:text="Menu"
         android:textColor="#2196F3" />
+
 
 
 </LinearLayout>

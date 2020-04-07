@@ -35,23 +35,16 @@ public class Temperature extends AppCompatActivity implements SensorEventListene
             sensorManager.registerListener(Temperature.this, temperature, SensorManager.SENSOR_DELAY_NORMAL);
             //   Log.d(TAG, "onCreate: Registered temperature listener");
         }else{
-            temp.setText("Temperature Sensor Not Supported");
+            temp.setText("Chybí sensor teploty");
         }
 
-        Button btn_storage = (Button)findViewById(R.id.btn_storage);
 
-        btn_storage.setOnClickListener(new View.OnClickListener() {
+        Button btn_menu = (Button)findViewById(R.id.btn_menu);
+
+        btn_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Temperature.this, Storage.class));
-            }
-        });
-        Button btn_quests = (Button)findViewById(R.id.btn_quests);
-
-        btn_quests.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Temperature.this, Quests.class));
+                startActivity(new Intent(Temperature.this, Menu.class));
             }
         });
 

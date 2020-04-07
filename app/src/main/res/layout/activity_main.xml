@@ -1,43 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:gravity="center"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/quests_background">
 
 
     <TextView
         android:id="@+id/tv_steps"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="184dp"
+        android:background="#85000000"
         android:gravity="center"
-        />
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:textColor="#36FFEE"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
 
     <Button
         android:id="@+id/btn_start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
         android:text="Spustit krokoměr"
+
         />
 
     <Button
         android:id="@+id/btn_stop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
         android:text="zastavit krokoměr"
+
         />
 
     <Button
-        android:id="@+id/btn_map"
+        android:id="@+id/btn_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mapa" />
-    <Button
-        android:id="@+id/btn_storage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Statistiky" />
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:text="Menu"
+        android:textColor="#2196F3" />
 
 </LinearLayout>

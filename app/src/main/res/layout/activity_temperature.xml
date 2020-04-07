@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:gravity="center"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/quests_background">
 
 
     <TextView
         android:id="@+id/temp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="242dp"
+        android:background="#85000000"
         android:gravity="center"
-        />
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:textColor="#FF9800"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+
     <Button
-        android:id="@+id/btn_storage"
+        android:id="@+id/btn_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Statistiky" />
-    <Button
-        android:id="@+id/btn_quests"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Úkoly" />
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:text="Menu"
+        android:textColor="#2196F3" />
 </LinearLayout>

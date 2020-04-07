@@ -48,12 +48,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .findFragmentById(R.id.mapNearBy);
         mapFragment.getMapAsync(this);
 
-        Button btn_pedo = (Button)findViewById(R.id.btn_pedo);
+        Button btn_menu = (Button)findViewById(R.id.btn_menu);
 
-        btn_pedo.setOnClickListener(new View.OnClickListener() {
+        btn_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, PedometerActivity.class));
+                startActivity(new Intent(MainActivity.this, Menu.class));
             }
         });
 

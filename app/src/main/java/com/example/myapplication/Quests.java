@@ -13,20 +13,31 @@ public class Quests extends AppCompatActivity {
     public static final String PREFS_NAME = "MyPrefsFile";
     private int numStepsTotal;
     TextView quest1,quest1text,quest2,quest2text;
+    private int vyska_btn = 2;
+    private String totalMeters;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quests);
         SharedPreferences settings = getSharedPreferences(PREFS_NAME,0);
         numStepsTotal = settings.getInt("numStepsTotal",numStepsTotal);
-
+        vyska_btn = settings.getInt("vyska_btn",vyska_btn);
         SharedPreferences.Editor editor = settings.edit();
         editor.putInt("numStepsTotal",numStepsTotal);
-
         editor.commit();
         numStepsTotal = settings.getInt("numStepsTotal",numStepsTotal);
         String numStepsTotalStr = String.valueOf(numStepsTotal);
-        String totalMeters = String.valueOf(numStepsTotal*0.762);
+
+        if(vyska_btn==1){
+             totalMeters = String.valueOf(numStepsTotal*0.862);
+        }
+        if(vyska_btn==2){
+             totalMeters = String.valueOf(numStepsTotal*0.762);
+        }
+        if(vyska_btn==3){
+             totalMeters = String.valueOf(numStepsTotal*0.662);
+        }
+
         quest1text = (TextView) findViewById(R.id.quest1text);
         quest1 = (TextView) findViewById(R.id.quest1);
         quest2text = (TextView) findViewById(R.id.quest2text);
@@ -76,14 +87,15 @@ public class Quests extends AppCompatActivity {
         quest2text.setText("Úkol trasa - zlatá úroveň");
         quest2.setText("78/100");
 
-        Button btn_temp = (Button)findViewById(R.id.btn_temp);
+        Button btn_menu = (Button)findViewById(R.id.btn_menu);
 
-        btn_temp.setOnClickListener(new View.OnClickListener() {
+        btn_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Quests.this, Temperature.class));
+                startActivity(new Intent(Quests.this, Menu.class));
             }
         });
+
 
     }
 

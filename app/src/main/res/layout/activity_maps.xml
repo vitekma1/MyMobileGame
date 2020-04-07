@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/quests_background">
 
     <fragment
         android:id="@+id/mapNearBy"
@@ -16,17 +18,15 @@
         android:text="Zobrazit trasu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackground" />
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+         />
 
     <Button
-        android:id="@+id/btn_pedo"
+        android:id="@+id/btn_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Krokoměr" />
-    <TextView
-        android:id="@+id/tv_steps"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        />
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:text="Menu"
+        android:textColor="#2196F3" />
+
 </LinearLayout>

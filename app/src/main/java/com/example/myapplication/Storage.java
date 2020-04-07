@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Storage extends AppCompatActivity {
 public static final String PREFS_NAME = "MyPrefsFile";
 private int numStepsTotal;
-    TextView Tsteps;
+    TextView Tsteps,Tcalories;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,25 +27,22 @@ private int numStepsTotal;
         numStepsTotal = settings.getInt("numStepsTotal",numStepsTotal);
         String numStepsTotalStr = String.valueOf(numStepsTotal);
         String totalMeters = String.valueOf(numStepsTotal*0.762);
+        String totalCalories = String.valueOf(numStepsTotal*0.762*0.04);
         Tsteps = (TextView) findViewById(R.id.total_steps);
-        Tsteps.setText(numStepsTotalStr);
-        Button btn_pedo = (Button)findViewById(R.id.btn_pedo);
+        Tsteps.setText("Celkový počet kroků = "+numStepsTotalStr + "kroků");
+        Tcalories = (TextView) findViewById(R.id.total_calories);
+        Tcalories.setText("Celkový počet spálených kalorií = "+totalCalories + "kcal");
+        //TODO prepocet kalorii dle vahy v nastaveni a tady
 
-        btn_pedo.setOnClickListener(new View.OnClickListener() {
+
+        Button btn_menu = (Button)findViewById(R.id.btn_menu);
+
+        btn_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Storage.this, PedometerActivity.class));
+                startActivity(new Intent(Storage.this, Menu.class));
             }
         });
-        Button btn_temp = (Button)findViewById(R.id.btn_temp);
-
-        btn_temp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Storage.this, Temperature.class));
-            }
-        });
-
     }
 
 }

@@ -34,7 +34,7 @@
 
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_maps">
+            android:label="Walking Game - Mapa">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -43,7 +43,7 @@
         </activity>
         <activity
             android:name=".PedometerActivity"
-            android:label="@string/title_activity_maps">
+            android:label="Walking Game - Krokoměr">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -52,7 +52,7 @@
         </activity>
         <activity
             android:name=".Storage"
-            android:label="@string/title_activity_maps">
+            android:label="Walking Game - Statistiky">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -61,7 +61,7 @@
         </activity>
         <activity
             android:name=".Temperature"
-            android:label="@string/title_activity_maps">
+            android:label="Walking Game - Teplota">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -70,7 +70,25 @@
         </activity>
         <activity
             android:name=".Quests"
-            android:label="Úkoly">
+            android:label="Walking Game - Úkoly">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Settings"
+            android:label="Walking Game - Nastavení">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Menu"
+            android:label="Walking Game - Menu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

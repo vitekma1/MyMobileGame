@@ -20,7 +20,7 @@ public class PedometerActivity extends AppCompatActivity implements SensorEventL
     private StepDetector simpleStepDetector;
     private SensorManager sensorManager;
     private Sensor accel;
-    private static final String TEXT_NUM_STEPS = "Number of Steps: ";
+    private static final String TEXT_NUM_STEPS = "Počet kroků: ";
     private int numSteps;
     TextView TvSteps;
     Button BtnStart;
@@ -70,22 +70,15 @@ public class PedometerActivity extends AppCompatActivity implements SensorEventL
             }
         });
 
-        Button btn_map = (Button)findViewById(R.id.btn_map);
+        Button btn_menu = (Button)findViewById(R.id.btn_menu);
 
-        btn_map.setOnClickListener(new View.OnClickListener() {
+        btn_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(PedometerActivity.this, MainActivity.class));
+                startActivity(new Intent(PedometerActivity.this, Menu.class));
             }
         });
-        Button btn_storage = (Button)findViewById(R.id.btn_storage);
 
-        btn_storage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(PedometerActivity.this, Storage.class));
-            }
-        });
 
 
 

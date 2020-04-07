@@ -9,35 +9,35 @@
     <TextView
         android:id="@+id/quest1text"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="120dp"
         android:background="#85000000"
         android:gravity="center"
         android:shadowColor="#000000"
         android:shadowDx="2"
         android:shadowDy="2"
         android:shadowRadius="2"
-        android:textColor="#2196F3"
+        android:textColor="#673AB7"
         android:textSize="24sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/quest1"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="80dp"
         android:background="#85000000"
         android:gravity="center"
         android:shadowColor="#000000"
         android:shadowDx="2"
         android:shadowDy="2"
         android:shadowRadius="2"
-        android:textColor="#2196F3"
+        android:textColor="#673AB7"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/quest2text"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="120dp"
         android:background="#85000000"
         android:gravity="center"
         android:shadowColor="#000000"
@@ -51,7 +51,7 @@
     <TextView
         android:id="@+id/quest2"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="80dp"
         android:background="#85000000"
         android:gravity="center"
         android:shadowColor="#000000"
@@ -63,11 +63,11 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/btn_temp"
+        android:id="@+id/btn_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
-        android:text="Teplota"
+        android:text="Menu"
         android:textColor="#2196F3" />
 
 
