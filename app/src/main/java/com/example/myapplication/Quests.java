@@ -11,8 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Quests extends AppCompatActivity {
     public static final String PREFS_NAME = "MyPrefsFile";
-    private int numStepsTotal;
-    TextView quest1,quest1text,quest2,quest2text;
+    private int numStepsTotal,totalMetersInt,food;
+    TextView quest1,quest1text,quest2,quest2text,souls;
     private int vyska_btn = 2;
     private String totalMeters;
     @Override
@@ -26,40 +26,56 @@ public class Quests extends AppCompatActivity {
         editor.putInt("numStepsTotal",numStepsTotal);
         editor.commit();
         numStepsTotal = settings.getInt("numStepsTotal",numStepsTotal);
-        String numStepsTotalStr = String.valueOf(numStepsTotal);
 
         if(vyska_btn==1){
-             totalMeters = String.valueOf(numStepsTotal*0.862);
+            totalMetersInt=(int)(numStepsTotal*0.862);
+            totalMeters = String.valueOf(totalMetersInt);
         }
         if(vyska_btn==2){
-             totalMeters = String.valueOf(numStepsTotal*0.762);
+            totalMetersInt=(int)(numStepsTotal*0.762);
+            totalMeters = String.valueOf(totalMetersInt);
         }
         if(vyska_btn==3){
-             totalMeters = String.valueOf(numStepsTotal*0.662);
+            totalMetersInt=(int)(numStepsTotal*0.662);
+            totalMeters = String.valueOf(totalMetersInt);
         }
-
+        if(totalMetersInt>150){
+            food++;}
+        if(totalMetersInt>500){
+            food++;}
+        if(totalMetersInt>1000){
+            food++;}
+        if(totalMetersInt>10000){
+            food++;}
+        if(totalMetersInt>100000){
+            food++;}
+        if(totalMetersInt>1000000){
+            food++;
+        }
         quest1text = (TextView) findViewById(R.id.quest1text);
         quest1 = (TextView) findViewById(R.id.quest1);
         quest2text = (TextView) findViewById(R.id.quest2text);
         quest2 = (TextView) findViewById(R.id.quest2);
+        souls = (TextView) findViewById(R.id.souls);
+        souls.setText("Počet získaných duší "+food*10);
         quest1text.setText("Úkol vzdálenost - železná úroveň");
         quest1.setText(totalMeters+"m/150m");
-        if((numStepsTotal*0.762)>150){
+        if(totalMetersInt>150){
         quest1text.setText("Úkol vzdálenost - bronzová úroveň");
         quest1.setText(totalMeters+"m/500m");}
-        if((numStepsTotal*0.762)>500){
+        if(totalMetersInt>500){
             quest1text.setText("Úkol vzdálenost - stříbrná úroveň");
             quest1.setText(totalMeters+"m/1000m");}
-        if((numStepsTotal*0.762)>1000){
+        if(totalMetersInt>1000){
             quest1text.setText("Úkol vzdálenost - zlatá úroveň");
             quest1.setText(totalMeters+"m/10000m");}
-        if((numStepsTotal*0.762)>10000){
+        if(totalMetersInt>10000){
             quest1text.setText("Úkol vzdálenost - platinová úroveň");
             quest1.setText(totalMeters+"m/100000m");}
-        if((numStepsTotal*0.762)>100000){
+        if(totalMetersInt>100000){
             quest1text.setText("Úkol vzdálenost - diamantová úroveň");
             quest1.setText(totalMeters+"m/1000000m");}
-        if((numStepsTotal*0.762)>1000000){
+        if(totalMetersInt>1000000){
             quest1text.setText("Úkoly na vzdálenost dokončeny");
             quest1.setText(totalMeters+"m");
         }

@@ -60,6 +60,14 @@ public class Menu extends AppCompatActivity {
                 startActivity(new Intent(Menu.this, PedometerActivity.class));
             }
         });
+        Button btn_buddy = (Button)findViewById(R.id.btn_buddy);
+
+        btn_buddy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Menu.this, Buddy.class));
+            }
+        });
     }
 
 }

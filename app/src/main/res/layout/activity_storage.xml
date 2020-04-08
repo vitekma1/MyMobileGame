@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/total_steps"
         android:layout_width="match_parent"
-        android:layout_height="286dp"
+        android:layout_height="231dp"
         android:background="#85000000"
         android:gravity="center"
         android:shadowColor="#000000"
@@ -18,12 +18,13 @@
         android:shadowDy="2"
         android:shadowRadius="2"
         android:textColor="#00FF19"
-        android:textSize="26sp"
+        android:textSize="30sp"
         android:textStyle="bold" />
+
     <TextView
         android:id="@+id/total_calories"
         android:layout_width="match_parent"
-        android:layout_height="286dp"
+        android:layout_height="206dp"
         android:background="#85000000"
         android:gravity="center"
         android:shadowColor="#000000"
@@ -31,7 +32,7 @@
         android:shadowDy="2"
         android:shadowRadius="2"
         android:textColor="#00FF19"
-        android:textSize="26sp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
 
