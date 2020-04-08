@@ -27,7 +27,7 @@ private int numStepsTotal;
         numStepsTotal = settings.getInt("numStepsTotal",numStepsTotal);
         String numStepsTotalStr = String.valueOf(numStepsTotal);
         String totalMeters = String.valueOf(numStepsTotal*0.762);
-        String totalCalories = String.valueOf(numStepsTotal*0.762*0.04);
+        String totalCalories = String.valueOf((int)(numStepsTotal*0.04));
         Tsteps = (TextView) findViewById(R.id.total_steps);
         Tsteps.setText("Celkový počet kroků = "+numStepsTotalStr + "kroků");
         Tcalories = (TextView) findViewById(R.id.total_calories);

@@ -45,7 +45,7 @@ public class PedometerActivity extends AppCompatActivity implements SensorEventL
         TvSteps = (TextView) findViewById(R.id.tv_steps);
         BtnStart = (Button) findViewById(R.id.btn_start);
         BtnStop = (Button) findViewById(R.id.btn_stop);
-
+        TvSteps.setText(TEXT_NUM_STEPS + 0);
 
 
         BtnStart.setOnClickListener(new View.OnClickListener() {
@@ -78,8 +78,6 @@ public class PedometerActivity extends AppCompatActivity implements SensorEventL
                 startActivity(new Intent(PedometerActivity.this, Menu.class));
             }
         });
-
-
 
 
     }
