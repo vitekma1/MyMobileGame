@@ -80,23 +80,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng latLng = new LatLng(currentLocation.getLatitude(),currentLocation.getLongitude());
         MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("I am here");
         googleMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
-        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,8));
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,12));
         googleMap.addMarker(markerOptions);
-        MarkerOptions place2 = new MarkerOptions().position(new LatLng(50.3104, 15.7252)).title("Location 2");
+        MarkerOptions place2 = new MarkerOptions().position(new LatLng(latLng.latitude+0.005, latLng.longitude)).title("Location 2");
         googleMap.addMarker(place2);
         getDirection = findViewById(R.id.btnGetDirection);
+        //TODO podminka overeni splneni ukolu lat a long v nakym rozmezi + pridani nove prom na odmenu za trasy ktera se zvysi v onclick u getdir
         getDirection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MarkerOptions place3 = new MarkerOptions().position(new LatLng(50.4104, 15.7252)).title("Location 2");
+
                 googleMap.clear();
                 LatLng latLng = new LatLng(currentLocation.getLatitude(),currentLocation.getLongitude());
                 MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("I am here");
                 googleMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
                 googleMap.addMarker(markerOptions);
-                googleMap.addMarker(place3);
+                MarkerOptions place2 = new MarkerOptions().position(new LatLng(latLng.latitude, latLng.longitude+0.005)).title("Location 2");
+                googleMap.addMarker(place2);
             }
         });
+
     }
 
     @Override
