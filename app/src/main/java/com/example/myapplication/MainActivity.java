@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         });
 
         place1 = new MarkerOptions().position(new LatLng(50.2104, 15.8252)).title("Location 1");
+
         place2 = new MarkerOptions().position(new LatLng(50.3104, 15.7252)).title("Location 2");
         MapFragment mapFragment = (MapFragment) getFragmentManager()
                 .findFragmentById(R.id.mapNearBy);

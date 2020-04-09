@@ -19,7 +19,7 @@ public class Temperature extends AppCompatActivity implements SensorEventListene
     private SensorManager sensorManager;
     private Sensor temperature;
 
-    TextView temp, press, tempInfo, pressInfo;
+    TextView temp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
