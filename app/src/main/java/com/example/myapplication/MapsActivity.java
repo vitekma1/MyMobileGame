@@ -1,9 +1,12 @@
 package com.example.myapplication;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -27,13 +30,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
     private static final int REQUEST_CODE = 101;
-
+    Button getDirection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
 
+        Button btn_menu = (Button)findViewById(R.id.btn_menu);
+
+        btn_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MapsActivity.this, Menu.class));
+            }
+        });
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         fetchLastLocation();
 
@@ -65,12 +76,27 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     @Override
-    public void onMapReady(GoogleMap googleMap) {
+    public void onMapReady(final GoogleMap googleMap) {
         LatLng latLng = new LatLng(currentLocation.getLatitude(),currentLocation.getLongitude());
         MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("I am here");
         googleMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
-        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,5));
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,8));
         googleMap.addMarker(markerOptions);
+        MarkerOptions place2 = new MarkerOptions().position(new LatLng(50.3104, 15.7252)).title("Location 2");
+        googleMap.addMarker(place2);
+        getDirection = findViewById(R.id.btnGetDirection);
+        getDirection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MarkerOptions place3 = new MarkerOptions().position(new LatLng(50.4104, 15.7252)).title("Location 2");
+                googleMap.clear();
+                LatLng latLng = new LatLng(currentLocation.getLatitude(),currentLocation.getLongitude());
+                MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("I am here");
+                googleMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
+                googleMap.addMarker(markerOptions);
+                googleMap.addMarker(place3);
+            }
+        });
     }
 
     @Override
