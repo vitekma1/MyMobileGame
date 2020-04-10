@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/quest1text"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="60dp"
         android:background="#85000000"
         android:gravity="center"
         android:shadowColor="#000000"
@@ -23,7 +23,7 @@
     <TextView
         android:id="@+id/quest1reward"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="30dp"
         android:background="#85000000"
         android:gravity="center"
         android:shadowColor="#000000"
@@ -39,7 +39,7 @@
     <TextView
         android:id="@+id/quest1"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="40dp"
         android:background="#85000000"
         android:gravity="center"
         android:shadowColor="#000000"
@@ -53,7 +53,7 @@
     <TextView
         android:id="@+id/quest2text"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="60dp"
         android:background="#85000000"
         android:gravity="center"
         android:shadowColor="#000000"
@@ -67,7 +67,7 @@
     <TextView
         android:id="@+id/quest2reward"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="30dp"
         android:background="#85000000"
         android:gravity="center"
         android:shadowColor="#000000"
@@ -82,7 +82,50 @@
     <TextView
         android:id="@+id/quest2"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="40dp"
+        android:background="#85000000"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:textColor="#FFEB3B"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/quest3text"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#85000000"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:textColor="#FFC107"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/quest3reward"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="#85000000"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:textColor="#FFEB3B"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="Odměna 1 duše/den"/>
+
+    <TextView
+        android:id="@+id/quest3"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
         android:background="#85000000"
         android:gravity="center"
         android:shadowColor="#000000"
@@ -96,7 +139,7 @@
     <TextView
         android:id="@+id/souls"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="50dp"
         android:background="#6138009B"
         android:gravity="center"
         android:shadowColor="#000000"

@@ -12,8 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Quests extends AppCompatActivity {
     public static final String PREFS_NAME = "MyPrefsFile";
     private int numStepsTotal,totalMetersInt,food;
-    TextView quest1,quest1text,quest2,quest2text,souls;
+    TextView quest1,quest1text,quest2,quest2text,quest3,quest3text,souls;
     private int vyska_btn = 2;
+    private int loginCount=0;
     private String totalMeters;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class Quests extends AppCompatActivity {
         setContentView(R.layout.activity_quests);
         SharedPreferences settings = getSharedPreferences(PREFS_NAME,0);
         numStepsTotal = settings.getInt("numStepsTotal",numStepsTotal);
+        loginCount = settings.getInt("loginCount",loginCount);
         vyska_btn = settings.getInt("vyska_btn",vyska_btn);
         SharedPreferences.Editor editor = settings.edit();
         editor.putInt("numStepsTotal",numStepsTotal);
@@ -39,25 +41,28 @@ public class Quests extends AppCompatActivity {
             totalMetersInt=(int)(numStepsTotal*0.662);
             totalMeters = String.valueOf(totalMetersInt);
         }
+        food=0;
         if(totalMetersInt>150){
-            food++;}
+            food=food+10;}
         if(totalMetersInt>500){
-            food++;}
+            food=food+10;}
         if(totalMetersInt>1000){
-            food++;}
+            food=food+10;}
         if(totalMetersInt>10000){
-            food++;}
+            food=food+10;}
         if(totalMetersInt>100000){
-            food++;}
+            food=food+10;}
         if(totalMetersInt>1000000){
-            food++;
-        }
+            food=food+10;}
+
         quest1text = (TextView) findViewById(R.id.quest1text);
         quest1 = (TextView) findViewById(R.id.quest1);
         quest2text = (TextView) findViewById(R.id.quest2text);
         quest2 = (TextView) findViewById(R.id.quest2);
+        quest3text = (TextView) findViewById(R.id.quest3text);
+        quest3 = (TextView) findViewById(R.id.quest3);
         souls = (TextView) findViewById(R.id.souls);
-        souls.setText("Počet získaných duší "+food*10);
+
         quest1text.setText("Úkol vzdálenost - železná úroveň");
         quest1.setText(totalMeters+"m/150m");
         if(totalMetersInt>150){
@@ -102,7 +107,10 @@ public class Quests extends AppCompatActivity {
 */
         quest2text.setText("Úkol trasa - zlatá úroveň");
         quest2.setText("78/100");
-
+        quest3text.setText("Úkol denní spuštění");
+        quest3.setText(loginCount+" spuštění");
+        food=food+loginCount;
+        souls.setText("Počet získaných duší "+food);
         Button btn_menu = (Button)findViewById(R.id.btn_menu);
 
         btn_menu.setOnClickListener(new View.OnClickListener() {

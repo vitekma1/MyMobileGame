@@ -14,6 +14,7 @@ public class Buddy extends AppCompatActivity {
     public static final String PREFS_NAME = "MyPrefsFile";
     private int numStepsTotal,food,totalMetersInt;
     TextView buddyTxt,buddy,buddyPoints;
+    private int loginCount=0;
     private int vyska_btn = 2;
     private String totalMeters;
     @Override
@@ -22,6 +23,7 @@ public class Buddy extends AppCompatActivity {
         setContentView(R.layout.activity_buddy);
         SharedPreferences settings = getSharedPreferences(PREFS_NAME,0);
         numStepsTotal = settings.getInt("numStepsTotal",numStepsTotal);
+        loginCount = settings.getInt("loginCount",loginCount);
         vyska_btn = settings.getInt("vyska_btn",vyska_btn);
         SharedPreferences.Editor editor = settings.edit();
         editor.putInt("numStepsTotal",numStepsTotal);
@@ -46,48 +48,47 @@ public class Buddy extends AppCompatActivity {
         buddy = (TextView) findViewById(R.id.buddy);
 
         if(totalMetersInt>150){
-            food++;}
+            food=food+10;}
         if(totalMetersInt>500){
-            food++;}
+            food=food+10;}
         if(totalMetersInt>1000){
-            food++;}
+            food=food+10;}
         if(totalMetersInt>10000){
-            food++;}
+            food=food+10;}
         if(totalMetersInt>100000){
-            food++;}
+            food=food+10;}
         if(totalMetersInt>1000000){
-            food++;
-        }
-
-        if(food==0){
+            food=food+10;}
+        food=food+loginCount;
+        if(food>=0){
             buddyTxt.setText("Démon level 0");
             buddy.setBackgroundResource(R.drawable.demon0);
-            buddyPoints.setText("Počet nasbíraných duší - "+food*10+"/10");
+            buddyPoints.setText("Počet nasbíraných duší - "+food+"/10");
         }
-        if(food==1){
+        if(food>=10){
             buddyTxt.setText("Démon level 1");
             buddy.setBackgroundResource(R.drawable.demon1);
-            buddyPoints.setText("Počet nasbíraných duší - "+food*10+"/20");
+            buddyPoints.setText("Počet nasbíraných duší - "+food+"/20");
         }
-        if(food==2){
+        if(food>=20){
             buddyTxt.setText("Démon level 2");
             buddy.setBackgroundResource(R.drawable.demon2);
-            buddyPoints.setText("Počet nasbíraných duší - "+food*10+"/30");
+            buddyPoints.setText("Počet nasbíraných duší - "+food+"/30");
         }
-        if(food==3){
+        if(food>=30){
             buddyTxt.setText("Démon level 3");
             buddy.setBackgroundResource(R.drawable.demon3);
-            buddyPoints.setText("Počet nasbíraných duší - "+food*10+"/40");
+            buddyPoints.setText("Počet nasbíraných duší - "+food+"/40");
         }
-        if(food==4){
+        if(food>=40){
             buddyTxt.setText("Démon level 4");
             buddy.setBackgroundResource(R.drawable.demon4);
-            buddyPoints.setText("Počet nasbíraných duší - "+food*10+"/50");
+            buddyPoints.setText("Počet nasbíraných duší - "+food+"/50");
         }
-        if(food==5){
+        if(food>=50){
             buddyTxt.setText("Démon level 5");
             buddy.setBackgroundResource(R.drawable.demon5);
-            buddyPoints.setText("Počet nasbíraných duší - "+food*10+"/60");
+            buddyPoints.setText("Počet nasbíraných duší - "+food+"/60");
         }
 
 

@@ -1,17 +1,29 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Calendar;
+import java.util.Date;
+
+import static com.example.myapplication.Storage.PREFS_NAME;
+
 public class Menu extends AppCompatActivity {
+    private int loginCount=0;
+    private int lastLoginDate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME,0);
+        lastLoginDate = settings.getInt("lastLoginDate",lastLoginDate);
+        loginCount = settings.getInt("loginCount",loginCount);
+        getCountOFEntrances();
         Button btn_storage = (Button)findViewById(R.id.btn_storage);
 
         btn_storage.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +61,7 @@ public class Menu extends AppCompatActivity {
         btn_map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Menu.this, MainActivity.class));
+                startActivity(new Intent(Menu.this, MapsActivity.class));
             }
         });
         Button btn_pedo = (Button)findViewById(R.id.btn_pedo);
@@ -70,4 +82,24 @@ public class Menu extends AppCompatActivity {
         });
     }
 
+    public void getCountOFEntrances(){
+        Date day = new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(day);
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME,0);
+        lastLoginDate = settings.getInt("lastLoginDate",lastLoginDate);
+        if(calendar.get(Calendar.DAY_OF_MONTH)==lastLoginDate) {
+
+        }else{
+            SharedPreferences.Editor editor = settings.edit();
+            lastLoginDate = calendar.get(Calendar.DAY_OF_MONTH);
+            loginCount++;
+            editor.putInt("loginCount",loginCount);
+            editor.putInt("lastLoginDate",lastLoginDate);
+
+            editor.commit();
+            System.out.println(lastLoginDate);
+            System.out.println(calendar.get(Calendar.DAY_OF_MONTH));
+        }
+    }
 }
