@@ -4,13 +4,14 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/pedobg">
+    android:background="@drawable/buddybackground">
 
 
     <TextView
         android:id="@+id/tv_steps"
         android:layout_width="match_parent"
         android:layout_height="184dp"
+        android:layout_marginBottom="40dp"
         android:background="#85000000"
         android:gravity="center"
         android:shadowColor="#000000"
@@ -25,27 +26,51 @@
     <Button
         android:id="@+id/btn_start"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/menu_button"
+        android:padding="12dp"
+        android:shadowColor="#000000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="10"
         android:text="Spustit krokoměr"
 
-        android:textColor="#9C27B0" />
+        android:textColor="#D9FF00" />
 
     <Button
         android:id="@+id/btn_stop"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/menu_button"
+        android:padding="12dp"
+        android:shadowColor="#000000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="10"
         android:text="zastavit krokoměr"
 
-        android:textColor="#3F51B5" />
+        android:textColor="#D9FF00" />
 
     <Button
         android:id="@+id/btn_menu"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="16dp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/menu_button"
+        android:padding="12dp"
+        android:shadowColor="#000000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="10"
         android:text="Menu"
-        android:textColor="#2196F3" />
+        android:textColor="#D9FF00" />
 
 </LinearLayout>

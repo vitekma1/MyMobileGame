@@ -1,81 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:background="@drawable/menu_background">
+    android:background="@drawable/buddybackground"
+    android:gravity="center">
 
     <TextView
         android:id="@+id/menuTxt"
-        android:layout_width="match_parent"
-        android:layout_height="261dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="65dp"
         android:background="#85000000"
         android:gravity="center"
+        android:padding="@dimen/fab_margin"
+        android:paddingTop="@dimen/fab_margin"
         android:shadowColor="#000000"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:shadowRadius="2"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="10"
         android:text="Vítejte v aplikaci Walking Game!"
         android:textColor="#D1FF29"
-        android:textSize="48sp"
-        android:textStyle="bold" />
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btn_buddy"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
-        android:text="Buddy"
-        android:textColor="#4CAF50" />
+        android:layout_marginTop="65dp"
+        android:animateLayoutChanges="true"
+        android:background="#85000000"
+        android:orientation="horizontal"
+        android:paddingLeft="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menuTxt">
 
-    <Button
-        android:id="@+id/btn_quests"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
-        android:text="Úkoly"
-        android:textColor="#009688" />
+        <Button
+            android:id="@+id/btn_quests"
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginBottom="10dp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/menu_button"
+            android:padding="@dimen/fab_margin"
+            android:shadowColor="#000000"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="10"
+            android:text="Úkoly"
+            android:textColor="#D9FF00" />
 
-    <Button
-        android:id="@+id/btn_pedo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
-        android:text="Krokoměr"
-        android:textColor="#00BCD4" />
+        <Button
+            android:id="@+id/btn_buddy"
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginBottom="10dp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/menu_button"
+            android:padding="@dimen/fab_margin"
+            android:shadowColor="#000000"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="10"
+            android:text="Buddy"
+            android:textColor="#D9FF00" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_temp"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
-        android:text="Teplota"
-        android:textColor="#00B0FF" />
+        android:layout_marginTop="16dp"
+        android:animateLayoutChanges="true"
+        android:background="#85000000"
+        android:orientation="horizontal"
+        android:paddingLeft="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
-    <Button
-        android:id="@+id/btn_map"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
-        android:text="Mapa"
-        android:textColor="#2196F3" />
+        <Button
+            android:id="@+id/btn_pedo"
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginBottom="10dp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/menu_button"
+            android:padding="@dimen/fab_margin"
+            android:shadowColor="#000000"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="10"
+            android:text="Krokoměr"
+            android:textColor="#D9FF00" />
 
-    <Button
-        android:id="@+id/btn_storage"
-        android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btn_storage"
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginBottom="10dp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/menu_button"
+            android:padding="@dimen/fab_margin"
+            android:shadowColor="#000000"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="10"
+            android:text="Statistiky"
+            android:textColor="#D9FF00" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
-        android:text="Statistiky"
-        android:textColor="#3F51B5" />
+        android:layout_marginTop="16dp"
+        android:animateLayoutChanges="true"
+        android:background="#85000000"
+        android:orientation="horizontal"
+        android:paddingLeft="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <Button
+            android:id="@+id/btn_map"
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginBottom="10dp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/menu_button"
+            android:padding="@dimen/fab_margin"
+            android:shadowColor="#000000"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="10"
+            android:text="Mapa"
+            android:textColor="#D9FF00" />
+
+        <Button
+            android:id="@+id/btn_temp"
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginBottom="10dp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/menu_button"
+            android:padding="@dimen/fab_margin"
+            android:shadowColor="#000000"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="10"
+            android:text="Teplota"
+            android:textColor="#D9FF00" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_settings"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="16dp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/menu_button"
+        android:padding="12dp"
+        android:shadowColor="#000000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="10"
         android:text="Nastavení"
-        android:textColor="#673AB7" />
+        android:textColor="#D9FF00"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

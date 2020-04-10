@@ -54,13 +54,20 @@
         android:textColor="#FFEB3B"
         android:textSize="20sp"
         android:textStyle="bold" />
+
     <Button
         android:id="@+id/btn_menu"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:layout_height="50dp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/menu_button"
+        android:padding="12dp"
+        android:shadowColor="#000000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="10"
         android:text="Menu"
-        android:textColor="#2196F3" />
+        android:textColor="#D9FF00" />
 
 
 </LinearLayout>
