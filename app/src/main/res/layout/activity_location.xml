@@ -15,7 +15,7 @@
 
     <Button
         android:id="@+id/btnGetDirection"
-        android:text="Zobrazit trasu"
+        android:text="Zobrazit cíl"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
