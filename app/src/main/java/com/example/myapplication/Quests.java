@@ -117,6 +117,7 @@ public class Quests extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Quests.this, Menu.class));
+                finish();
             }
         });
 

@@ -41,6 +41,7 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Settings.this, Menu.class));
+                finish();
             }
         });
 

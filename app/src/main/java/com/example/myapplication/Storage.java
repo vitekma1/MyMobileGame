@@ -41,6 +41,7 @@ private int numStepsTotal;
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Storage.this, Menu.class));
+                finish();
             }
         });
     }

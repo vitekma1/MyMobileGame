@@ -30,6 +30,7 @@ public class Menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Menu.this, Storage.class));
+                finish();
             }
         });
         Button btn_temp = (Button)findViewById(R.id.btn_temp);
@@ -38,6 +39,7 @@ public class Menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Menu.this, Temperature.class));
+                finish();
             }
         });
         Button btn_settings = (Button)findViewById(R.id.btn_settings);
@@ -46,6 +48,7 @@ public class Menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Menu.this, Settings.class));
+                finish();
             }
         });
         Button btn_quests = (Button)findViewById(R.id.btn_quests);
@@ -54,6 +57,7 @@ public class Menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Menu.this, Quests.class));
+                finish();
             }
         });
         Button btn_map = (Button)findViewById(R.id.btn_map);
@@ -62,6 +66,7 @@ public class Menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Menu.this, MapsActivity.class));
+                finish();
             }
         });
         Button btn_pedo = (Button)findViewById(R.id.btn_pedo);
@@ -70,6 +75,7 @@ public class Menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Menu.this, PedometerActivity.class));
+                finish();
             }
         });
         Button btn_buddy = (Button)findViewById(R.id.btn_buddy);
@@ -78,6 +84,7 @@ public class Menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Menu.this, Buddy.class));
+                finish();
             }
         });
     }

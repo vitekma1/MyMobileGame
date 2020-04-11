@@ -45,6 +45,7 @@ public class Temperature extends AppCompatActivity implements SensorEventListene
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Temperature.this, Menu.class));
+                finish();
             }
         });
 

@@ -43,6 +43,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MapsActivity.this, Menu.class));
+                finish();
             }
         });
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
