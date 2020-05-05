@@ -78,7 +78,7 @@
         android:textColor="#FFEB3B"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:text="Odměna 5 duší"/>
+        android:text="Odměna 1 duše/trasa"/>
 
     <TextView
         android:id="@+id/quest2"

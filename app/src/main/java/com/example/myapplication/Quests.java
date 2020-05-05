@@ -13,6 +13,7 @@ public class Quests extends AppCompatActivity {
     public static final String PREFS_NAME = "MyPrefsFile";
     private int numStepsTotal,totalMetersInt,food;
     TextView quest1,quest1text,quest2,quest2text,quest3,quest3text,souls;
+    private int trasa = 0;
     private int vyska_btn = 2;
     private int loginCount=0;
     private String totalMeters;
@@ -24,9 +25,12 @@ public class Quests extends AppCompatActivity {
         numStepsTotal = settings.getInt("numStepsTotal",numStepsTotal);
         loginCount = settings.getInt("loginCount",loginCount);
         vyska_btn = settings.getInt("vyska_btn",vyska_btn);
+        trasa = settings.getInt("trasa",trasa);
         SharedPreferences.Editor editor = settings.edit();
         editor.putInt("numStepsTotal",numStepsTotal);
         editor.commit();
+
+        System.out.println("--------------------------------"+trasa);
         numStepsTotal = settings.getInt("numStepsTotal",numStepsTotal);
 
         if(vyska_btn==1){
@@ -105,11 +109,12 @@ public class Quests extends AppCompatActivity {
             quest2.setText(totalMeters+"m");
         }
 */
-        quest2text.setText("Úkol trasa - zlatá úroveň");
-        quest2.setText("78/100");
+        String trasaText = String.valueOf(trasa);
+        quest2text.setText("Úkol trasa");
+        quest2.setText(trasaText);
         quest3text.setText("Úkol denní spuštění");
         quest3.setText(loginCount+" spuštění");
-        food=food+loginCount;
+        food=food+loginCount+trasa;
         souls.setText("Počet získaných duší "+food);
         Button btn_menu = (Button)findViewById(R.id.btn_menu);
 

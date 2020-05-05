@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
@@ -26,17 +27,23 @@ import com.google.android.gms.tasks.Task;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 {
-
+    public static final String PREFS_NAME = "MyPrefsFile";
     Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
     private static final int REQUEST_CODE = 101;
     Button getDirection;
-
+    private int trasa = 0;
+    private MarkerOptions place2;
+    private MarkerOptions markerOptions;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
-
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME,0);
+        trasa = settings.getInt("trasa",trasa);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putInt("trasa",trasa);
+        editor.commit();
         Button btn_menu = (Button)findViewById(R.id.btn_menu);
 
         btn_menu.setOnClickListener(new View.OnClickListener() {
@@ -76,28 +83,73 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
     }
 
+    public static int getRandomInteger(int maximum, int minimum){
+        return ((int) (Math.random()*(maximum - minimum))) + minimum;
+    }
+
+
+
     @Override
     public void onMapReady(final GoogleMap googleMap) {
         LatLng latLng = new LatLng(currentLocation.getLatitude(),currentLocation.getLongitude());
-        MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("I am here");
+         markerOptions = new MarkerOptions().position(latLng).title("Start");
         googleMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,15));
         googleMap.addMarker(markerOptions);
-        MarkerOptions place2 = new MarkerOptions().position(new LatLng(latLng.latitude+0.005, latLng.longitude)).title("Location 2");
+        int random = getRandomInteger(3,0);
+        switch(random) {
+            case 0:
+                place2 = new MarkerOptions().position(new LatLng(latLng.latitude+0.005, latLng.longitude)).title("Cil");
+                break;
+            case 1:
+                place2 = new MarkerOptions().position(new LatLng(latLng.latitude-0.005, latLng.longitude)).title("Cil");
+                break;
+            case 2:
+                place2 = new MarkerOptions().position(new LatLng(latLng.latitude, latLng.longitude+0.005)).title("Cil");
+                break;
+            case 3:
+                place2 = new MarkerOptions().position(new LatLng(latLng.latitude, latLng.longitude-0.005)).title("Cil");
+                break;
+
+        }
+
         googleMap.addMarker(place2);
         getDirection = findViewById(R.id.btnGetDirection);
-        //TODO podminka overeni splneni ukolu lat a long v nakym rozmezi + pridani nove prom na odmenu za trasy ktera se zvysi v onclick u getdir
+
         getDirection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                googleMap.clear();
-                LatLng latLng = new LatLng(currentLocation.getLatitude(),currentLocation.getLongitude());
-                MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("I am here");
-                googleMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
+            googleMap.clear();
+                    SharedPreferences settings = getSharedPreferences(PREFS_NAME,0);
+                    SharedPreferences.Editor editor = settings.edit();
+                    trasa++;
+                    editor.putInt("trasa",trasa);
+                    editor.commit();
+
+                markerOptions = new MarkerOptions().position(new LatLng(place2.getPosition().latitude, place2.getPosition().longitude)).title("Start");
                 googleMap.addMarker(markerOptions);
-                MarkerOptions place2 = new MarkerOptions().position(new LatLng(latLng.latitude, latLng.longitude+0.005)).title("Location 2");
+                int random = getRandomInteger(3,0);
+                switch(random) {
+                    case 0:
+                        place2 = new MarkerOptions().position(new LatLng(markerOptions.getPosition().latitude+0.005, markerOptions.getPosition().longitude+0.001)).title("Cil");
+                        break;
+                    case 1:
+                        place2 = new MarkerOptions().position(new LatLng(markerOptions.getPosition().latitude-0.005, markerOptions.getPosition().longitude+0.001)).title("Cil");
+                        break;
+                    case 2:
+                        place2 = new MarkerOptions().position(new LatLng(markerOptions.getPosition().latitude+0.001, markerOptions.getPosition().longitude+0.005)).title("Cil");
+                        break;
+                    case 3:
+                        place2 = new MarkerOptions().position(new LatLng(markerOptions.getPosition().latitude+0.001, markerOptions.getPosition().longitude-0.005)).title("Cil");
+                        break;
+
+                }
+
                 googleMap.addMarker(place2);
+                googleMap.animateCamera(CameraUpdateFactory.newLatLng(markerOptions.getPosition()));
+
+
             }
         });
 

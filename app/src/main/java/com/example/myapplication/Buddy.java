@@ -15,6 +15,7 @@ public class Buddy extends AppCompatActivity {
     private int numStepsTotal,food,totalMetersInt;
     TextView buddyTxt,buddy,buddyPoints;
     private int loginCount=0;
+    private int trasa=0;
     private int vyska_btn = 2;
     private String totalMeters;
     @Override
@@ -24,6 +25,7 @@ public class Buddy extends AppCompatActivity {
         SharedPreferences settings = getSharedPreferences(PREFS_NAME,0);
         numStepsTotal = settings.getInt("numStepsTotal",numStepsTotal);
         loginCount = settings.getInt("loginCount",loginCount);
+        trasa = settings.getInt("trasa",trasa);
         vyska_btn = settings.getInt("vyska_btn",vyska_btn);
         SharedPreferences.Editor editor = settings.edit();
         editor.putInt("numStepsTotal",numStepsTotal);
@@ -59,7 +61,7 @@ public class Buddy extends AppCompatActivity {
             food=food+10;}
         if(totalMetersInt>1000000){
             food=food+10;}
-        food=food+loginCount;
+        food=food+loginCount+trasa;
         if(food>=0){
             buddyTxt.setText("Démon level 0");
             buddy.setBackgroundResource(R.drawable.demon0);
