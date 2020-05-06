@@ -44,10 +44,10 @@
 
         <Button
             android:id="@+id/btn_quests"
-            android:layout_width="150dp"
+            android:layout_width="110dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="60dp"
             android:layout_marginBottom="10dp"
             android:autoSizeTextType="uniform"
             android:background="@drawable/menu_button"
@@ -61,7 +61,7 @@
 
         <Button
             android:id="@+id/btn_buddy"
-            android:layout_width="150dp"
+            android:layout_width="110dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="60dp"
@@ -92,10 +92,10 @@
 
         <Button
             android:id="@+id/btn_pedo"
-            android:layout_width="150dp"
+            android:layout_width="110dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="60dp"
             android:layout_marginBottom="10dp"
             android:autoSizeTextType="uniform"
             android:background="@drawable/menu_button"
@@ -109,7 +109,7 @@
 
         <Button
             android:id="@+id/btn_storage"
-            android:layout_width="150dp"
+            android:layout_width="110dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="60dp"
@@ -141,10 +141,10 @@
 
         <Button
             android:id="@+id/btn_map"
-            android:layout_width="150dp"
+            android:layout_width="110dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="60dp"
             android:layout_marginBottom="10dp"
             android:autoSizeTextType="uniform"
             android:background="@drawable/menu_button"
@@ -158,7 +158,7 @@
 
         <Button
             android:id="@+id/btn_temp"
-            android:layout_width="150dp"
+            android:layout_width="110dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="60dp"
